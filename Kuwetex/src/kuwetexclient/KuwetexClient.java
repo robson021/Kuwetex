@@ -17,6 +17,10 @@ import gui.MainPanel;
 import gui.RecommendationsPanel;
 import network.Connection;
 
+/**
+ * The main frame of the application. It holds other components.
+ * Also, the class have defined static methods that are used by other classes.
+ * */
 public class KuwetexClient extends JFrame {
 	private static final String TITLE = "KUWETEX 1.0";
 	public static final String RAPORT_FILE = "res/data.txt";

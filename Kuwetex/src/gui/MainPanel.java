@@ -16,6 +16,10 @@ import kuwetexclient.KuwetexClient;
 import network.Connection;
 import network.Message;
 
+/**
+ * The main panel that provides interaction with user.
+ * */
+@SuppressWarnings("serial")
 public class MainPanel extends JPanel {
 	public static final int DEFAULT_COLLUMN_SIZE = 20;
 	

@@ -2,6 +2,9 @@ package sensors;
 
 import other.Cat;
 
+/**
+ * All the sensors that examines cat attributes should inherit this interface.
+ * */
 public interface AbstractSensor {
 	/**
 	 * Examines the cat.

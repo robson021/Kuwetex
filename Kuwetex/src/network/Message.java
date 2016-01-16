@@ -2,6 +2,10 @@ package network;
 
 import java.io.Serializable;
 
+/**
+ * Object of this class is used as a information sent between client and server.
+ * */
+@SuppressWarnings("serial")
 public class Message implements Serializable {
 	
 	/* 

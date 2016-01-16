@@ -6,6 +6,10 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
+/**
+ * Class has essential methods that provides connection with the server (Litter Box)
+ * and it is responsible for sending and receiving messages. 
+ * */
 public class Connection {
 	private Message message;
 	private boolean isConnected = false;
@@ -20,7 +24,7 @@ public class Connection {
 	/**
 	 * If panel is disconnected this method attempts to connect to the LitterBox (server).
 	 * @param msg - text that you want to send.
-	 * @return - message for the server (response message).
+	 * @return - message from the server (response message).
 	 * @throws - UnknownHostException, IOException
 	 * */
 	public String connectToServer(String msg) throws UnknownHostException, IOException {

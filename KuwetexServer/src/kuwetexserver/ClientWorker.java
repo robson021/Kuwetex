@@ -8,6 +8,11 @@ import java.util.Map;
 
 import network.Message;
 
+/**
+ * This class represents client thread.
+ * Client is connected to the server and it sends messages.
+ * Task of the server is to response to the client in the run method.
+ * */
 class ClientWorker implements Runnable {
 	private final Socket socket;	
 	private final ObjectInputStream in;

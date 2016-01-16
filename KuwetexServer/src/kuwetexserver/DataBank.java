@@ -6,6 +6,10 @@ import java.util.List;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
+/**
+ * The class holds all the information about cats attributes, illnesses
+ * and litter box uses history.
+ * */
 public class DataBank {
 	private static final List<Data> dataList = new ArrayList<>();
 	private static final List<IllnessHistory> illnessHistory = new ArrayList<>();

@@ -15,7 +15,12 @@ import kuwetexclient.KuwetexClient;
 import network.Connection;
 import network.Message;
 
-
+/**
+ * Recommendations are displayed here.
+ * If you click the button client sends message to the server and as a response,
+ * it will return information about cats.
+ * */
+@SuppressWarnings("serial")
 public class RecommendationsPanel extends JPanel {
 	private final Connection connection;
 	private JButton getRecommendationsButton, backButton;

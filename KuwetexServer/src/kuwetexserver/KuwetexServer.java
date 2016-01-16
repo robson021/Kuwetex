@@ -12,6 +12,10 @@ import network.Message;
 import other.Cat;
 import sensors.*;
 
+/**
+ * Main class of the server.
+ * Runs many threads and loop that waits for connections for clients is located here.
+ * */
 public class KuwetexServer {
 	private static volatile int idCounter = 0;
 	private static volatile int litterBoxDirtiness = 0;
@@ -119,6 +123,9 @@ public class KuwetexServer {
 		return dataBank.toString();
 	}
 	
+	/**
+	 * Thread that checks whether the litter box is dirty and needs cleaning.
+	 * */
 	private class CleaningSystemRunnable implements Runnable {
 		@Override
 		public void run() {

@@ -2,6 +2,11 @@ package other;
 
 import kuwetexserver.KuwetexServer;
 
+/**
+ * Cat imitation class.
+ * It should be run as a thread.
+ * Run method has an infinite loop that tries to use litter box for time to time.
+ * */
 public class Cat implements Runnable {
 	public static final String[] NAMES = {"Dianusz", "Filemon", "Garfield"};
 	public static final String[] EYES = {"blue", "red", "green"};
