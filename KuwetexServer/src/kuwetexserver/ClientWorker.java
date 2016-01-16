@@ -16,6 +16,12 @@ class ClientWorker implements Runnable {
 	private final Map<Integer, Socket> clientMap;
 	//private static volatile int online = 0;
 		
+	/**
+	 * Constructor for new client that is connected to the server via socket.
+	 * @param s - the socket
+	 * @param map - reference to the map of clients. Every instance of this class is added to the map.
+	 * @throws IOException
+	 * */
 	public ClientWorker(Socket s, int id, Map<Integer, Socket> map) throws IOException {
 		socket = s;
 		ID = id;
@@ -24,11 +30,15 @@ class ClientWorker implements Runnable {
 		out = new ObjectOutputStream(socket.getOutputStream());
 		//online++;
 	}
+	
+	/**
+	 * Runs the client thread. The loop inside is done when the socket is closed.
+	 * */
 	@Override
 	public void run() {
+		Message message;
 		while (socket.isConnected()) 
 		{			
-				Message message;
 				try {
 					message = (Message) in.readObject();
 					response(message);
@@ -40,6 +50,11 @@ class ClientWorker implements Runnable {
 				}							
 		}
 	}
+	/**
+	 * Do some action and sends response message to the client.
+	 * The action depends on header of the message given as an argument.
+	 * @param message - message from the client.
+	 * */
 	private void response(Message message) {
 		System.out.println("Message from client #" + ID + ": " + message.getMessage());
 		switch (message.getHEADER()) {			
@@ -87,6 +102,10 @@ class ClientWorker implements Runnable {
 		} // end of switch
 	}
 	
+	/**
+	 * When user disconnects this method closes socket (if it is still open).
+	 * It also deletes the user for the client map.
+	 * */
 	private void logOutUser() {
 		if (!socket.isClosed())
 			try {
@@ -99,6 +118,10 @@ class ClientWorker implements Runnable {
 		System.out.println("User #"+ID+" has disconnected. Online now: " + clientMap.size());
 	}
 	
+	/**
+	 * Sends response to the client.
+	 * @param message - the Message class object that will be sent.
+	 * */
 	private void sendMessage (Message message) {
 		try {
 			out.writeObject(message);

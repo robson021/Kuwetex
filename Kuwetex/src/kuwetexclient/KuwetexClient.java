@@ -29,6 +29,10 @@ public class KuwetexClient extends JFrame {
 	private static final Map<String, JPanel> panelMap = new HashMap<>(2);
 	private static final String[] PANEL_NAMES = {"mainPanel", "recommPanel"};
 	
+	/**
+	 * Constructor of the main class.
+	 * @throws UnknownHostException, IOException
+	 * */
 	public KuwetexClient() throws UnknownHostException, IOException {
 		super(TITLE);
 		connection = new Connection();
@@ -57,6 +61,14 @@ public class KuwetexClient extends JFrame {
 		return (KuwetexClient) applicationFrame;
 	} */
 	
+	
+	/**
+	 * Saves given text to the file. It is used to update data about cats.
+	 * @param text - text that will be append to the file.
+	 * @param PATH - path where the file will be created. Example: "res/recommendations.txt"
+	 * @return true or false. If file was successfully created returns true. Otherwise method will return false.
+	 * @throws IOException
+	 * */
 	@SuppressWarnings("finally")
 	public static boolean saveToFile(final String text, final String PATH) throws IOException {
 		FileWriter fw = null;

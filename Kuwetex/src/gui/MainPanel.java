@@ -24,7 +24,11 @@ public class MainPanel extends JPanel {
 	private JTextArea textArea;
 	private JButton connectButton, getReportButton, disconnectButton, forceCleanButton, recommButton;
 	//private final JPanel thisPanel = this, recommendPanel;
-
+	
+	/**
+	 * Constructor.
+	 * @param conn - reference to the Connection class object.
+	 * */
 	public MainPanel(Connection conn) {
 		super (new BorderLayout());		
 		connection = conn;

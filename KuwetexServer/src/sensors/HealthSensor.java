@@ -14,6 +14,11 @@ public class HealthSensor implements AbstractSensor{
 	
 	private static final Random r = KuwetexServer.random;
 	
+	/**
+	 * Detects health condition of the cat.
+	 * @param cat - Reference to the cat that will be examined.
+	 * @return String representation of cat's health status.
+	 * */
 	@Override
 	public String examine(Cat cat) {
 		int p = r.nextInt(POOP_QUALITY.length);

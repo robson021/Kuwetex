@@ -23,11 +23,23 @@ public class DataBank {
 		private final String dateOfexcrection;
 		private final String weight;
 		private final String health;
-			
+		
+		/**
+		 * Constructor.
+		 * @param name - name of the cat.
+		 * @param eyes - eyes color of the cat.
+		 * @param weight - current cat weight (kg).
+		 * @param time - the time of last defecation.
+		 * @param health - health status of the cat.
+		 * */
 		Data(String name, String eyes, String weight, long time, String health) {
 			catName = name; eyeColor = eyes; timeSpent = time; this.weight = weight; this.health = health;
 			dateOfexcrection = Calendar.getInstance().getTime().toString();
-		}	
+		}
+		/**
+		 * Overridden method.
+		 * @return String representation of the informations about the cat, that are stored in the object.
+		 * */
 		@Override
 		public String toString() {
 			return "* "+catName +"; "+ eyeColor+" eyes; "+"weight: "+weight+
@@ -40,17 +52,34 @@ public class DataBank {
 		String date;
 		String recommendation;
 		
+		/**
+		 * If cat is ill, recommendation for him/her is generated here.
+		 * @param cat - cat name
+		 * @param date - date of the analysis
+		 * */
 		public IllnessHistory(String cat, String date) {
 			catName = cat; this.date = date;
 			recommendation = PRESCRIPTIONS[KuwetexServer.random.nextInt(PRESCRIPTIONS.length)];
 		}
 		
+		/**
+		 * Overridden method.
+		 * @return String representation of the cat, his/her illness and recommendations for owner.
+		 * */
 		@Override
 		public String toString() {			
 			return catName + " was ill on " + date +". Recommendation:\n" + recommendation;
 		}
 	}
 	
+	/**
+	 * Adds new record to the list of cats' data.
+	 * @param name - name of the cat.
+	 * @param eyes - eyes color of the cat.
+	 * @param weight - current cat weight (kg).
+	 * @param time - the time of last defecation.
+	 * @param health - health status of the cat.
+	 * */
 	public void addNewRecord (String name, String eyes, String weight ,long time, String health) {
 		rwLock.writeLock().lock();
 		try {
@@ -60,6 +89,11 @@ public class DataBank {
 		}
 	}
 	
+	/**
+	 * Adds new illness history to the list of illnesses.
+	 * @param catName - name of the cat
+	 * @param date - date of the analysis
+	 * */
 	public void addNewIllCat(String catName, String date) {
 		rwLock.writeLock().lock();
 		try {
@@ -68,7 +102,10 @@ public class DataBank {
 			rwLock.writeLock().unlock();
 		}
 	}
-	
+	/**
+	 * Overridden method.
+	 * @return String representation of all data about the cats stored in the Data Bank. 
+	 * */
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -84,6 +121,10 @@ public class DataBank {
 		return builder.toString();
 	}
 	
+	/**
+	 * Gathers the data of all cats' illnesses and gives prescriptions to the owner.
+	 * @return String representation of the values.
+	 * */
 	public String getPrescriptions() {
 		StringBuilder builder = new StringBuilder();
 		rwLock.readLock().lock();

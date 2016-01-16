@@ -38,7 +38,11 @@ public class KuwetexServer {
 		clientMap = new HashMap<>();
 		serverSocket = new ServerSocket(Message.PORT);
 	}
-	
+	/**
+	 * Starts the server.
+	 * Allows clients to connect.
+	 * Creates virtual cats.
+	 * */
 	public void startServer() {
 		isWorking = true;		
 		// clearness monitor thread
@@ -64,6 +68,11 @@ public class KuwetexServer {
 		System.out.println("server closed");
 	}
 	
+	/**
+	 * When cat thread wants to use litter box, the method is used.
+	 * It is thread safety. Method has inner ReentrantLock.
+	 * @throws InterruptedException
+	 * */
 	public static void useLitterBox(Cat cat) throws InterruptedException {
 		String eyes = eyeSensor.examine(cat);
 		String weight = weightMachine.examine(cat);
@@ -89,12 +98,23 @@ public class KuwetexServer {
 		updateData((t1-t0), name, eyes, weight, healthStatus);
 	}
 
-
+	/**
+	 * After the cat used the litter box, this method updates data in the Data Bank.
+	 * @param name - name of the cat.
+	 * @param eyes - eyes color of the cat.
+	 * @param weight - current cat weight (kg).
+	 * @param timeSpent - the time of last defecation.
+	 * @param health - health status of the cat.
+	 * */
 	private static void updateData(long timeSpent, String name, String eyes, String weight, String health) {	
 		System.out.println("Updating history");
 		dataBank.addNewRecord(name, eyes, weight, timeSpent, health);
 	}
 	
+	/**
+	 * Gets report for the Data Bank as a String.
+	 * @return String representation of all data that is stored.
+	 * */
 	public static String getRaport() {
 		return dataBank.toString();
 	}
@@ -114,7 +134,13 @@ public class KuwetexServer {
 		}
 		
 	}
-	
+		
+	/**
+	 * Clears the litter box. Waits if cat is inside.
+	 * It can be triggered for the user or by the cleaning monitor thread.
+	 * Method is thread safe.
+	 * @param forcedClean - true = cleaning forced by user, false = triggered by cleaning thread.
+	 * */
 	public static void clearLitterBox(boolean forcedClean) throws InterruptedException {
 		lock.lock(); // There can not be any cat inside during cleaning process
 		try {
@@ -133,6 +159,9 @@ public class KuwetexServer {
 		}
 	}
 	
+	/**
+	 * @return Instance of the DataBank.
+	 * */
 	public static final DataBank getDataBank() {
 		return dataBank;
 	}

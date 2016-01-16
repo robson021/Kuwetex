@@ -17,6 +17,12 @@ public class Connection {
 	public Connection() {		
 	}
 	
+	/**
+	 * If panel is disconnected this method attempts to connect to the LitterBox (server).
+	 * @param msg - text that you want to send.
+	 * @return - message for the server (response message).
+	 * @throws - UnknownHostException, IOException
+	 * */
 	public String connectToServer(String msg) throws UnknownHostException, IOException {
 		String msgBack = null;
 		if (isConnected) return null;
@@ -31,6 +37,14 @@ public class Connection {
 		return msgBack;
 	}
 	
+	/**
+	 * Sends new message to the server (Litter Box), then waits for response and returns
+	 * message for the server.
+	 * @param text - text that you want to send to the server.
+	 * @param header - header that is used to recognize action on server's side.
+	 * Use one of static final headers for Message class.
+	 * @return Response (text message) for the server.
+	 * */
 	public String sendNewMessage (String text, int header) {
 		message = new Message(text, header);		
 		try {
@@ -51,6 +65,10 @@ public class Connection {
 		}
 	}
 	
+	/**
+	 * Method is used for disconnecting for the server (Litter Box).
+	 * @return True if disconnected without any problems. False if exception occoured.
+	 * */
 	@SuppressWarnings("finally")
 	public boolean closeConnection() {
 		boolean tof = false;
@@ -69,7 +87,11 @@ public class Connection {
 			return tof;
 		}
 	}
-
+	
+	/**
+	 * Checks if socket is still connected to the server (Litter Box).
+	 * @return True if socket is NOT closed. False if the socket is closed.
+	 * */
 	public boolean isConnected() {
 		if (socket == null || socket.isClosed())
 			isConnected = false;

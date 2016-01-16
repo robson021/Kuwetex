@@ -1,28 +1,8 @@
-Mon Jan 04 19:40:16 CET 2016
+Sat Jan 16 23:18:55 CET 2016
 
-* Dianusz; blue eyes; weight: 3 kg;  1089ms, on day: Mon Jan 04 19:39:29 CET 2016;
-Fur quality: dirty - need cleaning, excrement: normal I
-* Filemon; red eyes; weight: 2 kg;  4710ms, on day: Mon Jan 04 19:39:33 CET 2016;
-Fur quality: soft, excrement: over average
-* Garfield; green eyes; weight: 6 kg;  44ms, on day: Mon Jan 04 19:39:33 CET 2016;
-Fur quality: soft, excrement: illness
-* Dianusz; blue eyes; weight: 6 kg;  516ms, on day: Mon Jan 04 19:39:34 CET 2016;
-Fur quality: dirty - need cleaning, excrement: normal I
-* Dianusz; blue eyes; weight: 2 kg;  1239ms, on day: Mon Jan 04 19:39:37 CET 2016;
-Fur quality: soft, excrement: normal I
-* Dianusz; blue eyes; weight: 6 kg;  3566ms, on day: Mon Jan 04 19:39:42 CET 2016;
-Fur quality: dirty - need cleaning, excrement: illness
-* Garfield; green eyes; weight: 3 kg;  148ms, on day: Mon Jan 04 19:39:46 CET 2016;
-Fur quality: dirty - need cleaning, excrement: normal I
-* Filemon; red eyes; weight: 3 kg;  2675ms, on day: Mon Jan 04 19:39:50 CET 2016;
-Fur quality: normal, excrement: normal I
-* Dianusz; blue eyes; weight: 2 kg;  321ms, on day: Mon Jan 04 19:39:55 CET 2016;
+* Dianusz; blue eyes; weight: 2 kg;  3702ms, on day: Sat Jan 16 23:18:49 CET 2016;
 Fur quality: soft, excrement: normal II
-* Garfield; green eyes; weight: 5 kg;  4243ms, on day: Mon Jan 04 19:39:59 CET 2016;
-Fur quality: soft, excrement: normal II
-* Garfield; green eyes; weight: 3 kg;  1621ms, on day: Mon Jan 04 19:40:05 CET 2016;
-Fur quality: dirty - need cleaning, excrement: illness
-* Filemon; red eyes; weight: 5 kg;  2253ms, on day: Mon Jan 04 19:40:07 CET 2016;
-Fur quality: normal, excrement: normal II
-* Dianusz; blue eyes; weight: 3 kg;  2972ms, on day: Mon Jan 04 19:40:13 CET 2016;
-Fur quality: soft, excrement: normal I
+* Filemon; red eyes; weight: 2 kg;  1409ms, on day: Sat Jan 16 23:18:51 CET 2016;
+Fur quality: dirty - need cleaning, excrement: normal I
+* Garfield; green eyes; weight: 2 kg;  481ms, on day: Sat Jan 16 23:18:51 CET 2016;
+Fur quality: dirty - need cleaning, excrement: normal I

@@ -14,7 +14,11 @@ public class Cat implements Runnable {
 	private final String EYE_COLOR;
 	private final int GENDER;
 	
-	
+	/**
+	 * Constructor.
+	 * @param name - name of the cat.
+	 * @param eyes - eyes color of the cat.
+	 * */
 	public Cat(int name, int eyes) {
 		NAME = NAMES[name];
 		EYE_COLOR = EYES[eyes];
@@ -34,13 +38,24 @@ public class Cat implements Runnable {
 			}
 		}
 	}
-
+	
+	/**
+	 * @return Name of the cat.
+	 * */
 	public String getName() {
 		return NAME;
 	}
+	
+	/**
+	 * @return Eyes color of the cat.
+	 * */
 	public String getEyes() {
 		return EYE_COLOR;
 	}
+	
+	/**
+	 * @return Gender of the cat.
+	 * */
 	public int getGender() {
 		return this.GENDER;
 	}

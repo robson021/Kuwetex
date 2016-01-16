@@ -20,7 +20,11 @@ public class RecommendationsPanel extends JPanel {
 	private final Connection connection;
 	private JButton getRecommendationsButton, backButton;
 	private JTextArea textArea;
-		
+	
+	/**
+	 * Constructor.
+	 * @param conn - reference to the Connection class object.
+	 * */
 	public RecommendationsPanel (Connection conn) {
 		super(new BorderLayout());
 		connection = conn;
