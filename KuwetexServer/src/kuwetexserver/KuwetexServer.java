@@ -61,7 +61,8 @@ public class KuwetexServer {
 		while (isWorking)
 		{
 			try {
-				Socket socket = serverSocket.accept();		
+				Socket socket = serverSocket.accept();
+				System.out.println("New connection!");
 				// new client thread
 				Thread t = new Thread(new ClientWorker(socket, idCounter++, clientMap));
 				t.start();
@@ -119,7 +120,7 @@ public class KuwetexServer {
 	 * Gets report for the Data Bank as a String.
 	 * @return String representation of all data that is stored.
 	 * */
-	public static String getRaport() {
+	public static String getReports() {
 		return dataBank.toString();
 	}
 	

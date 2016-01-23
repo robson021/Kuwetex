@@ -1,8 +1,0 @@
-Sat Jan 16 23:18:55 CET 2016
-
-* Dianusz; blue eyes; weight: 2 kg;  3702ms, on day: Sat Jan 16 23:18:49 CET 2016;
-Fur quality: soft, excrement: normal II
-* Filemon; red eyes; weight: 2 kg;  1409ms, on day: Sat Jan 16 23:18:51 CET 2016;
-Fur quality: dirty - need cleaning, excrement: normal I
-* Garfield; green eyes; weight: 2 kg;  481ms, on day: Sat Jan 16 23:18:51 CET 2016;
-Fur quality: dirty - need cleaning, excrement: normal I

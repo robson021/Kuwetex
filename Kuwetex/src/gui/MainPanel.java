@@ -102,11 +102,12 @@ public class MainPanel extends JPanel {
 		public void actionPerformed(ActionEvent arg0) {	
 			if (! checkConnection()) return;
 			String raport = connection.sendNewMessage(null, Message.GET_RAPORT);
+			raport = "------------------------\n" + raport;
 			textArea.append(raport);
 			//textArea.append("\n");
 			try {
-				if (KuwetexClient.saveToFile(raport, KuwetexClient.RAPORT_FILE)) {
-					textArea.append("Saved to file: " + KuwetexClient.RAPORT_FILE);
+				if (KuwetexClient.saveToFile(raport, KuwetexClient.REPORT_FILE)) {
+					textArea.append("Saved to file: " + KuwetexClient.REPORT_FILE);
 					textArea.append("\n\n");
 				}
 			} catch (IOException e) {

@@ -48,8 +48,8 @@ class ClientWorker implements Runnable {
 					message = (Message) in.readObject();
 					response(message);
 				} catch (ClassNotFoundException | IOException e) {
-					e.printStackTrace();
-					System.out.println("Error, user #" + ID);
+					//e.printStackTrace();
+					//System.out.println("Error, user #" + ID);
 					logOutUser();
 					break;
 				}							
@@ -75,7 +75,7 @@ class ClientWorker implements Runnable {
 			break;
 		}
 		case Message.GET_RAPORT: {
-			String raport = KuwetexServer.getRaport();
+			String raport = KuwetexServer.getReports();
 			message = new Message(raport, Message.GET_RAPORT);
 			sendMessage(message);
 			break;

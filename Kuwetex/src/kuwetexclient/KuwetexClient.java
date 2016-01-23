@@ -23,7 +23,7 @@ import network.Connection;
  * */
 public class KuwetexClient extends JFrame {
 	private static final String TITLE = "KUWETEX 1.0";
-	public static final String RAPORT_FILE = "res/data.txt";
+	public static final String REPORT_FILE = "res/report.txt";
 	public static final String RECOMMENDATIONS_FILE = "res/recommendations.txt";
 	
 	private Connection connection = null;	

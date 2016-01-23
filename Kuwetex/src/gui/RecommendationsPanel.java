@@ -62,6 +62,7 @@ public class RecommendationsPanel extends JPanel {
 		@Override
 		public void actionPerformed(ActionEvent arg0) {			
 			String text = connection.sendNewMessage(null, Message.GET_RECOMMENDATIONS);
+			text = "------------------------\n" + text;
 			textArea.append(text);
 			textArea.append("\n");
 			
