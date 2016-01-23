@@ -1,0 +1,7 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Type=Application
+Name=Visual_Paradigm_12.2
+Exec=/bin/sh "/home/robert/Visual_Paradigm_12.2/bin/Visual_Paradigm"
+Icon=/home/robert/Visual_Paradigm_12.2/.install4j/Visual_Paradigm.png
+Categories=Application;
